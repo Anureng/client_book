@@ -80,13 +80,13 @@ import Navbar from "@/components/Navbar";
 // export default page
 
 
-async function detail(id) {
+async function detail(id:string) {
   let data  = await fetch (`https://book-vwv6.onrender.com/api/getBookId/${id}`);
   data = await data.json();
   return data
 }
 
-export default async function page ({ params }){
+export default async function page ({ params }:any){
   console.log(params);
   
 let products = await detail(params.id)
